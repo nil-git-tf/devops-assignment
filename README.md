@@ -55,4 +55,6 @@ Step 9 - If build is successful, then it will download app and zip it to push on
 - Both were tested and working good
 
 # Assumption
+- Here, I created 2 Repos, one is - devops-assignment, for Terraform files to view and other is - "jenkins-pipeline" to view the flask applications file and JenkinsFile to use in pipeline
 - Currently I tested it with VPC, public subnet, S3 bucket which were already created
+- Uploaded images/snapshots of the work I did on Jenkins here to review it
