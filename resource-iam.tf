@@ -1,3 +1,4 @@
+#Create IAM role with SSM access to attach on EC2
 
 resource "aws_iam_role" "ec2_role" {
   name = "demo_role"
