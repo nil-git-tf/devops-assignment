@@ -1,4 +1,5 @@
 
+#Create Security group for jenkins EC2
 
 resource "aws_security_group" "jenkins_sg" {
   name        = "jenkins-sg"
@@ -54,6 +55,8 @@ data "aws_ami" "amazon_linux" {
 
   owners = ["amazon"] # Canonical
 }
+
+#Create EC2 instance to host jenkins
 
 resource "aws_instance" "jenkins" {
   ami             = data.aws_ami.amazon_linux.id
