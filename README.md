@@ -1,8 +1,9 @@
 # DevOps-assignment
  A CI/CD pipeline for a simple python flask application using the DevOps tools such as: 
- - git for code repository
+ - Git for code repository
  - AWS Elastic Beanstalk service for deploying and scaling web applications and services developed with various languages like Java, .NET, PHP, Node.js, Python
  - Being managed service of AWS from capacity provisioning, load balancing, auto-scaling to application health monitoring Elastic Beanstalk automatically handles it
+ - S3 bucket to push application artifacts
  - Terraform where we are going to provision the Jenkins on EC2 and elastic beanstalk for our flask application and environment under it
  - Jenkins pipeline will be the main automation tool to pull application files from git and push it into elastic beanstalk 
 
@@ -19,15 +20,16 @@ Step 3 - Now login to Jenkins on browser with Public IP address of EC2 to conifg
 ```
 Step 4 - Go to Credentials manager and Add credentials for SSH access on github repository (I generated it using ssh-keygen command)
          (Need to copy private key in "Private Key" section ) 
+         Add one more Credential for IAM access key and secret key id which will have permissions of elastic beanstalk and upload access on S3 bucket
 ```
 ```
-Step 5 - Go to your Git repo Settings and copy Public key under "Deploy Keys" section there
+Step 5 - Go to your Git repo Settings and copy Public key created in above step via ssh-keygen under "Deploy Keys" section
 ```
 ```
 Step 6 - Again be on Settings and look for Webhooks / Add webhook, You need to put IP address of jenkins in "Payload URL" field 
 ```
 ```
-Step 7 - Now lets configure our first job which will connect to Git repo and helps us fetching the our app files onto Jenkins
+Step 7 - Now lets configure our first job which will connect to Git repo and helps us fetching our app files onto Jenkins workspace
        A. Create a New Item with pipeline 
        B. Then select "GitHub project" and specify your git repo url
        C. Under "Build Triggers" tick on "GitHub hook trigger for GITScm polling"
@@ -46,7 +48,7 @@ Step 9 - If build is successful, then it will download app and zip it to push on
 - Password authentication with github from jenkins is discontinued so used SSH key based authentication
 - I was struggeling in checkout phase of pipeline to connect with github, then "Pipeline Syntax" helped me getting correct command to use
 - Used session manager of AWS to connect with instance thus reducing the long way of SSHing to server using putty/mobaxterm etc
-- even writing README file in depth is learning for me 
+- Even writing README file in depth is learning for me 
 
 # Manual tasks performed
 - Ran the terraform from local for EC2/Jenkins and then for Elastic beanstalk configuration
