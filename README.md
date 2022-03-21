@@ -7,7 +7,7 @@
  - Terraform where we are going to provision the Jenkins on EC2 and elastic beanstalk for our flask application and environment under it
  - Jenkins pipeline will be the main automation tool to pull application files from git and push it into elastic beanstalk 
 
-# Setting up the Environment
+## Setting up the Environment
 ```
 Step 1 - Need to run the terraform from the local which helps in Creating the AWS EC2 with Jenkins installation on it and Creating the AWS Elastic Beanstalk with Application and its Environment for python
 ```
@@ -44,19 +44,19 @@ Step 8 - Either you can Run this job by manually clicking on "Build Now" button 
 Step 9 - If build is successful, then it will download app and zip it to push on S3 bucket in my account. From there it will get updated and deployed as new version in elasti beanstalk created in Step 1
 ```
 
-# Lessons I learned during this assignment
+## Lessons I learned during this assignment
 - Password authentication with github from jenkins is discontinued so used SSH key based authentication
 - I was struggeling in checkout phase of pipeline to connect with github, then "Pipeline Syntax" helped me getting correct command to use
 - Used session manager of AWS to connect with instance thus reducing the long way of SSHing to server using putty/mobaxterm etc
 - Even writing README file in depth is learning for me 
 
-# Manual tasks performed
+### Manual tasks performed
 - Ran the terraform from local for EC2/Jenkins and then for Elastic beanstalk configuration
 - Manually created the Jenkins job for pipeline and testing
 - During this I created 2 jobs one with "Pipeline Script" and "Pipeline Script with SCM"
 - Both were tested and working good
 
-# Assumption
+### Assumption
 - Here, I created 2 Repos, one is - devops-assignment, for Terraform files to view and other is - "jenkins-pipeline" to view the flask applications file and JenkinsFile to use in pipeline
 - Currently I tested it with VPC, public subnet, S3 bucket which were already created
 - Uploaded images/snapshots of the work I did on Jenkins here to review it
