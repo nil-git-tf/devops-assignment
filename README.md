@@ -38,8 +38,8 @@ Step 7 - Now lets configure our first job which will connect to Git repo and hel
        B. Then select "GitHub project" and specify your git repo url
        C. Under "Build Triggers" tick on "GitHub hook trigger for GITScm polling"
        D. In "Pipeline" section chose "Pipeline script from SCM" 
-       E. Here you need to give inputs of git repo URL, select credential we had added in Step 4 above, Branch Specifier as "*/main" 
-          then in "Script Path" keep the  name as JenkinsFile
+       E. Here you need to give inputs of git repo URL, select credential we had added in Step 4 above, Branch Specifier as 
+          "*/main" then in "Script Path" keep the  name as JenkinsFile
        F. cross check once more, Apply it and Save
 ```
 ```
@@ -47,8 +47,8 @@ Step 8 - Either you can Run this job by manually clicking on "Build Now" button 
          jenkins should automatically run the build
 ```
 ```
-Step 9 - If build is successful, then it will download app and zip it to push on S3 bucket in my account. From there it will get updated 
-         and deployed as new version in elasti beanstalk created in Step 1
+Step 9 - If build is successful, then it will download app and zip it to push on S3 bucket in my account. From there it will get
+         updated and deployed as new version in elasti beanstalk created in Step 1
 ```
 
 ## Lessons I learned during this assignment
