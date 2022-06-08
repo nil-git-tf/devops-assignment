@@ -9,10 +9,12 @@
 
 ## Setting up the Environment
 ```
-Step 1 - Need to run the terraform from the local which helps in Creating the AWS EC2 with Jenkins installation on it and Creating the AWS Elastic Beanstalk with Application and its Environment for python
+Step 1 - Need to run the terraform from the local which helps in Creating the AWS EC2 with Jenkins installation
+         on it and Creating the AWS Elastic Beanstalk with Application and its Environment for python
 ```
 ```
-Step 2 - Once the EC2 is ready, login to it to get Jenkins admin password (currently AWS session manager is used for accessing SSH on jenkins)
+Step 2 - Once the EC2 is ready, login to it to get Jenkins admin password (currently AWS session manager is 
+         used for accessing SSH on jenkins)
 ```
 ```
 Step 3 - Now login to Jenkins on browser with Public IP address of EC2 to conifgure our automation process
