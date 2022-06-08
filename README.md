@@ -22,7 +22,8 @@ Step 3 - Now login to Jenkins on browser with Public IP address of EC2 to conifg
 ```
 Step 4 - Go to Credentials manager and Add credentials for SSH access on github repository (I generated it using ssh-keygen command)
          (Need to copy private key in "Private Key" section ) 
-         Add one more Credential for IAM access key and secret key id which will have permissions of elastic beanstalk and upload access on S3 bucket
+         Add one more Credential for IAM access key and secret key id which will have permissions of 
+         elastic beanstalk and upload access on S3 bucket
 ```
 ```
 Step 5 - Go to your Git repo Settings and copy Public key created in above step via ssh-keygen under "Deploy Keys" section
@@ -31,7 +32,8 @@ Step 5 - Go to your Git repo Settings and copy Public key created in above step 
 Step 6 - Again be on Settings and look for Webhooks / Add webhook, You need to put IP address of jenkins in "Payload URL" field 
 ```
 ```
-Step 7 - Now lets configure our first job which will connect to Git repo and helps us fetching our app files onto Jenkins workspace
+Step 7 - Now lets configure our first job which will connect to Git repo and helps us fetching our app files 
+         onto Jenkins workspace
        A. Create a New Item with pipeline 
        B. Then select "GitHub project" and specify your git repo url
        C. Under "Build Triggers" tick on "GitHub hook trigger for GITScm polling"
@@ -40,10 +42,12 @@ Step 7 - Now lets configure our first job which will connect to Git repo and hel
        F. cross check once more, Apply it and Save
 ```
 ```
-Step 8 - Either you can Run this job by manually clicking on "Build Now" button or wait for commit to happen in git repo and then jenkins should automatically run the build
+Step 8 - Either you can Run this job by manually clicking on "Build Now" button or wait for commit to happen in 
+         git repo and then jenkins should automatically run the build
 ```
 ```
-Step 9 - If build is successful, then it will download app and zip it to push on S3 bucket in my account. From there it will get updated and deployed as new version in elasti beanstalk created in Step 1
+Step 9 - If build is successful, then it will download app and zip it to push on S3 bucket in my account. From there it 
+         will get updated and deployed as new version in elasti beanstalk created in Step 1
 ```
 
 ## Lessons I learned during this assignment
